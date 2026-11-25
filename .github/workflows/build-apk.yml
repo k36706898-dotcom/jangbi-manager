@@ -13,7 +13,8 @@ jobs:
 
       - name: 압축 풀기
         run: unzip -q jangbi-manager-source.zip -d source
-
+      - name: Java 오류 수정
+        run: sed -i 's/android\.app\.PrintManager/android.print.PrintManager/g' source/app/src/main/java/com/ollim/jangbimanager/MainActivity.java
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
